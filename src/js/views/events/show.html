@@ -40,7 +40,7 @@
         <p class="subtitle">Doors open: {{ vm.event.dates.start.localTime }}</p>
         <p class="subtitle">Venue: {{ vm.event._embedded.venues[0].name }}</p>
         <div>
-        <p class="subtitle">General Info: {{ vm.event._embedded.venues[0].generalInfo.generalRule | limitTo : 100 : begin }}...</p>
+        <p class="subtitle">General Info: {{ vm.event._embedded.venues[0].generalInfo.generalRule | limitTo : 150 : begin }}...</p>
         <a href="{{ vm.event._embedded.venues[0].url }}" target="_blank"><p class="gig-link">Buy tickets: {{ vm.event._embedded.venues[0].url }}</p></a>
 
           <a class="groupImg" ui-sref="groupsNew({ id: vm.event.id })"><img ng-height="45px" width="45px" src="https://i.imgur.com/rRDKGUX.png"></a>
