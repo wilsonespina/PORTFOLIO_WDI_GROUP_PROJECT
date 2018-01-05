@@ -104,7 +104,7 @@ pointer and lat / lng values
 ### Comments Section
 create and delete
 
-![comments](./src/images/readme/comments.png)
+![comments](./src/images/readme/Comments.png)
 > Figure x - 
 
 
