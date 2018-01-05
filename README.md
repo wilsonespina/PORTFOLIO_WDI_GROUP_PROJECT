@@ -122,6 +122,19 @@ back end testing with Mocha and Chai
 ## STYLING
 ### Card Animations
 changing on hover
+
+```css
+._card {
+  background-color: $almost-black;
+  border-left: 4px solid $spotify-green;
+  color: $white;
+  &:hover {
+    background-color: darken( $almost-black, 2% );
+    border-left: 4px solid #DA22FF;
+    cursor: pointer;
+    }
+```
+
 ### Mininal Colour Theme
 stick to few colours and maintain through out
 
