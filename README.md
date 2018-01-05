@@ -12,27 +12,119 @@ This was my first opportunity to working in team environment and it highlighted 
 
 ### Programming and Technology Library:
 
-* Mongo, Express, Angular, Node.JS
-* JavaScript
+* Mongo, Express, AngularJS, Node.js
 * HTML5
 * CSS3
-* SASS
-* morgan
-* bluebird
+* SASS / SCSS
+* Bulma
+* Mocha
+* Chai
+* Gulp
+* TicketMaster API
+* Google Maps API
+* Spotify API
 
 ## PLANNING
+### Ideas Mapping & Group Planning
+After being put into teams, 
+
+![Team planning](./src/images/readme/combined_team_planning.png)
+> Figure 
+
+
+
 ### Wireframing and Prototyping
+Once our team 
+
 ![Wireframe flow](./src/images/readme/combined_wireframes.png)
+> Figure 
 
 
-## RESPONSIBILITIES
 
-## FEATURES
+## FINAL APP
+### Page Flow
+It was decided that the.....
+
+
+
+
+![register](./src/images/readme/screenshot_register.png)
+> Figure x - Register page
+
+![event index](./src/images/readme/screenshot_eventIndex.png)
+> Figure x - Events index page
+
+![event show](./src/images/readme/screenshot_eventShow.png)
+> Figure x - Event show page
+
+![group show](./src/images/readme/screenshot_groupShow.png)
+> Figure x - Group show page
+
+
+
+
+### OAuth
+On the initial login page, a user can either 
+
+
+```js
+function spotifyLogin(req, res, next) {
+  var tokenUrl = 'https://accounts.spotify.com/api/token';
+  var userUrl = 'https://api.spotify.com/v1/me';
+
+  var params = {
+    grant_type: 'authorization_code',
+    code: req.body.code,
+    redirect_uri: req.body.redirectUri
+  };
+
+  var headers = {
+    Authorization:
+      'Basic ' +
+      new Buffer(req.body.clientId + ':' + oauth.SPOTIFY_SECRET).toString(
+        'base64'
+      )
+  };
+```
+
+The modal belew appears once the 
+
+![oauth](./src/images/readme/screenshot_spotifyOauth.png)
+> Figure x - 
+
+
+
+
+
+
+## MY RESPONSIBILITIES
 ### Google Maps
 pointer and lat / lng values
 
 ### Comments Section
 create and delete
+
+![comments](./src/images/readme/comments.png)
+> Figure x - 
+
+
+
+### Testing
+To run the back end testing, I used Mocah and Chai
+
+![mocha logo](https://camo.githubusercontent.com/af4bf83ab2ca125346740f9961345a24ec43b3a9/68747470733a2f2f636c6475702e636f6d2f78465646784f696f41552e737667) ![chai logo](https://seeklogo.com/images/C/chai-logo-F349805F7D-seeklogo.com.png)
+
+back end testing with Mocha and Chai
+
+![testing](./src/images/readme/screenshot_test.png)
+
+
+## STYLING
+### Card Animations
+changing on hover
+### Mininal Colour Theme
+stick to few colours and maintain through out
+
 
 ## LESSONS LEARNED
 
@@ -41,6 +133,10 @@ create and delete
 2. Spotify app issues
 3. styling classes duplication
 
+### Project Successes
+1. Managing to incorporate three different APIs and having them work together.
+2. 
+
 ## FEATURES BACKLOG
 1. Adding Google Places to the site to help users find out if there's restaurants/bars near the gig location.
-2. 
+2. Running more tests
