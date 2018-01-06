@@ -25,28 +25,24 @@ This was my first opportunity to working in team environment and it highlighted 
 * Spotify API
 
 ## PLANNING
+
 ### Ideas Mapping & Group Planning
-After being put into teams, 
+After being allocated into teams, we all went away to try to come up with idea for our group webwite. The next day we pitched our own ideas to each other until we settled on the social music sharing and event app. This was a theme I was particularly happy with as I've always wanted this exact type of app to exist for gigs or festivals that I go to.
+
+Below are some inital wireframe sketches my team and I made when thinking about the flow of the website and the user's journey when navigating between pages.
 
 ![Team planning](./src/images/readme/combined_team_planning.png)
-> Figure 
-
-
+> Figure 1 - Planning stage
 
 ### Wireframing and Prototyping
-Once our team 
+Once our team had a firm idea of what our site was about and the sort of features we wanted to include, we set about wireframing the pages using proto.io. This was the first time I had come across prototyping software and I found it incredibly useful to help visualise how someone would navigate around final website. As we had all agreed in the design and layout of the site at an early stage, it was also useful later on down the line during the styling phase.
 
 ![Wireframe flow](./src/images/readme/combined_wireframes.png)
-> Figure 
-
-
+> Figure 2 - Wireframes and protypes created using proto.io
 
 ## FINAL APP
 ### Page Flow
-It was decided that the.....
-
-
-
+Below are screenshot of the final layout of the website. 
 
 ![register](./src/images/readme/screenshot_register.png)
 > Figure x - Register page
@@ -59,8 +55,6 @@ It was decided that the.....
 
 ![group show](./src/images/readme/screenshot_groupShow.png)
 > Figure x - Group show page
-
-
 
 
 ### OAuth
@@ -93,27 +87,29 @@ The modal belew appears once the
 > Figure x - 
 
 ### Proxy Request
+In order to get event data back from the Tick
 
 ```js
 function getEventData(req, res) {
-  rp('https://app.ticketmaster.com/discovery/v2/events.json?countryCode=GB
-&classificationName=pop&classificationName=concertp&city=London&sort=date,asc
+  rp('https://app.ticketmaster.com/discovery/v2/events.json?countryCode=GB 
+&classificationName=pop
+&classificationName=concertp
+&city=London
+&sort=date,asc
 &apikey=bbr8L0veZB9V45s6JSAf321OGwHhydvq')
-    .then(response => {
-      const data = JSON.parse(response);
-      return res.status(200).json(data._embedded.events);
-    });
+    
+...
+
 }
 ```
 
 
 
-### Ticketmaster API 
+### Ticketmaster API Data
 JSON data back from Ticket Master
 
 ![ticketmaster api data](./src/images/readme/latlng.png)
 > Figure x - 
-> 
 
 
 
@@ -196,6 +192,7 @@ $white: white;
 1. git flow
 2. Spotify app issues
 3. styling classes duplication
+4. Not understanding what the true MVP was 
 
 ### Project Successes
 1. Managing to incorporate three different APIs and having them work together.
