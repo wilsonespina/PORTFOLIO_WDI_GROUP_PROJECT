@@ -91,12 +91,7 @@ In order to get event data back from the Tick
 
 ```js
 function getEventData(req, res) {
-  rp('https://app.ticketmaster.com/discovery/v2/events.json?countryCode=GB
-&classificationName=pop
-&classificationName=concertp
-&city=London
-&sort=date,asc
-&apikey===bbr8L0veZB9V45s6JSAf321OGwHhydvq==')
+  rp('https://app.ticketmaster.com/discovery/v2/events.json?countryCode=GB&classificationName=pop&classificationName=concertp&city=London&sort=date,asc&apikey=bbr8L0veZB9V45s6JSAf321OGwHhydvq')
     
 ...
 
