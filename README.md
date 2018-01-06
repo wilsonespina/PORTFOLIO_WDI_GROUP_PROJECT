@@ -34,43 +34,42 @@ Below are some initial wireframe sketches my team and I made when thinking about
 ![Team planning](./src/images/readme/combined_team_planning.png)
 > Figure 1 - Planning stage
 
-### Wire-framing and Prototyping
-Once our team had a firm idea of what our site was about and the sort of features we wanted to include, we set about wire-framing the pages using proto.io. This was the first time I had come across prototyping software and I found it incredibly useful to help visualise how someone would navigate around final website. As we had all agreed in the design and layout of the site at an early stage, it was also useful later on down the line during the styling phase.
+### Wireframing and Prototyping
+Once our team had a firm idea of what our site was about and the sort of features we wanted to include, we set about wireframing the pages using proto.io. This was the first time I had come across prototyping software and I found it incredibly useful to help visualise how someone would navigate around final website. As we had all agreed in the design and layout of the site at an early stage, it was also useful later on down the line during the styling phase.
 
 ![Wireframe flow](./src/images/readme/combined_wireframes.png)
 > Figure 2 - Wireframes and prototypes created using proto.io
 
 ## FINAL APP
-### Page Flow
-Below are screenshot of the final layout of the website. 
+### Screenshots
+Below are screenshots showing the final layout of our website. We decided to try to emulate the simple clean layout that you can find on the Spotify desktop app.
 
 ![register](./src/images/readme/screenshot_register.png)
-> Figure x - Register page
+> Figure 3 - Register page
 
 ![event index](./src/images/readme/screenshot_eventIndex.png)
-> Figure x - Events index page
+> Figure 4 - Events index page
 
 ![event show](./src/images/readme/screenshot_eventShow.png)
-> Figure x - Event show page
+> Figure 5 - Event show page
 
 ![group show](./src/images/readme/screenshot_groupShow.png)
-> Figure x - Group show page
-
+> Figure 6 - Group show page=
 
 ### OAuth
-On the initial login page, a user can either 
+On the initial login page, a user can choose to register their details and set up a login. However to get the Spotify functionality working on Event pages, a user can login with their Spotify account details.
 
+The modal below appears once the users opts to login using their Spotify login:
+
+![oauth](./src/images/readme/screenshot_spotifyOauth.png)
+> Figure 7 - Spotify login modal
+
+The OAuth functionality is handled within a controller in the back end. Here, request-promise is used to send `POST` request to Spotify. Parameters such as the unique Spotify secret ID are included in the headers. Once the ID is authorised by Spotify,`request-promise` then handles a `GET` request which includes the encoded `access_token` from Spotify. This is stored in Local Storage within the browser and the tool that lets the website know that the user is authorised.
 
 ```js
 function spotifyLogin(req, res, next) {
-  var tokenUrl = 'https://accounts.spotify.com/api/token';
-  var userUrl = 'https://api.spotify.com/v1/me';
 
-  var params = {
-    grant_type: 'authorization_code',
-    code: req.body.code,
-    redirect_uri: req.body.redirectUri
-  };
+...
 
   var headers = {
     Authorization:
@@ -79,15 +78,35 @@ function spotifyLogin(req, res, next) {
         'base64'
       )
   };
+  
+...
+
+  return new Promise((resolve, reject) => {
+    rp({
+      method: 'post',
+      uri: tokenUrl,
+      json: true,
+      form: params,
+      headers: headers
+    })
+      .then(body => {
+        req.spotifyToken = body.access_token;
+
+        return rp({
+          method: 'GET',
+          uri: userUrl,
+          json: true,
+          headers: {
+            Authorization: 'Bearer ' + body.access_token
+          }
+        });
+      })
 ```
 
-The modal below appears once the 
-
-![oauth](./src/images/readme/screenshot_spotifyOauth.png)
-> Figure x - 
-
 ### Proxy Request
-In order to get event data back from the Tick
+In order to get event data back from the ticketmaster API, we needed once again use `request-promise` to retrieve and handle operations in the back end.
+
+Once we had registered our application on the ticketmaster developer [site](https://developer.ticketmaster.com/), we looked through the available documentation to 
 
 ```js
 function getEventData(req, res) {
