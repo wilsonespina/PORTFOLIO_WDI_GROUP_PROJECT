@@ -27,18 +27,18 @@ This was my first opportunity to working in team environment and it highlighted 
 ## PLANNING
 
 ### Ideas Mapping & Group Planning
-After being allocated into teams, we all went away to try to come up with idea for our group webwite. The next day we pitched our own ideas to each other until we settled on the social music sharing and event app. This was a theme I was particularly happy with as I've always wanted this exact type of app to exist for gigs or festivals that I go to.
+After being allocated into teams, we all went away to try to come up with idea for our group website. The next day we pitched our own ideas to each other until we settled on the social music sharing and event app. This was a theme I was particularly happy with as I've always wanted this exact type of app to exist for gigs or festivals that I go to.
 
-Below are some inital wireframe sketches my team and I made when thinking about the flow of the website and the user's journey when navigating between pages.
+Below are some initial wireframe sketches my team and I made when thinking about the flow of the website and the user's journey when navigating between pages.
 
 ![Team planning](./src/images/readme/combined_team_planning.png)
 > Figure 1 - Planning stage
 
-### Wireframing and Prototyping
-Once our team had a firm idea of what our site was about and the sort of features we wanted to include, we set about wireframing the pages using proto.io. This was the first time I had come across prototyping software and I found it incredibly useful to help visualise how someone would navigate around final website. As we had all agreed in the design and layout of the site at an early stage, it was also useful later on down the line during the styling phase.
+### Wire-framing and Prototyping
+Once our team had a firm idea of what our site was about and the sort of features we wanted to include, we set about wire-framing the pages using proto.io. This was the first time I had come across prototyping software and I found it incredibly useful to help visualise how someone would navigate around final website. As we had all agreed in the design and layout of the site at an early stage, it was also useful later on down the line during the styling phase.
 
 ![Wireframe flow](./src/images/readme/combined_wireframes.png)
-> Figure 2 - Wireframes and protypes created using proto.io
+> Figure 2 - Wireframes and prototypes created using proto.io
 
 ## FINAL APP
 ### Page Flow
@@ -81,7 +81,7 @@ function spotifyLogin(req, res, next) {
   };
 ```
 
-The modal belew appears once the 
+The modal below appears once the 
 
 ![oauth](./src/images/readme/screenshot_spotifyOauth.png)
 > Figure x - 
@@ -91,12 +91,12 @@ In order to get event data back from the Tick
 
 ```js
 function getEventData(req, res) {
-  rp('https://app.ticketmaster.com/discovery/v2/events.json?countryCode=GB 
+  rp('https://app.ticketmaster.com/discovery/v2/events.json?countryCode=GB
 &classificationName=pop
 &classificationName=concertp
 &city=London
 &sort=date,asc
-&apikey=bbr8L0veZB9V45s6JSAf321OGwHhydvq')
+&apikey===bbr8L0veZB9V45s6JSAf321OGwHhydvq==')
     
 ...
 
@@ -149,7 +149,7 @@ create and delete
 
 
 ### Testing
-To run the back end testing, I used Mocah and Chai
+To run the back end testing, I used Mocha and Chai
 
 ![mocha logo](https://camo.githubusercontent.com/af4bf83ab2ca125346740f9961345a24ec43b3a9/68747470733a2f2f636c6475702e636f6d2f78465646784f696f41552e737667) ![chai logo](https://seeklogo.com/images/C/chai-logo-F349805F7D-seeklogo.com.png)
 
@@ -174,7 +174,7 @@ changing on hover
     }
 ```
 
-### Mininal Colour Theme
+### Minimal Colour Theme
 stick to few colours and maintain through out
 
 ```js
