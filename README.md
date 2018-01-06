@@ -34,27 +34,33 @@ Below are some initial wireframe sketches my team and I made when thinking about
 ![Team planning](./src/images/readme/combined_team_planning.png)
 > Figure 1 - Planning stage
 
+### Trello Planning
+Throughout the project, our team maintained a Trello board to help plan and track everyone's daily tasks. This was the first time I had used Trello within a group environment and I found being able to assign tasks to individual members was a great feature. Often during the project week, we would all be working on our own individual feautres and the Trello board made it much easier to see where we were as a team and what was due next. I found that when we were planning there seemed to be a fine balace between planning individual sprint in details and not being bogged down with too much detail, especially as we were all novice coders. As none of us had a full understanding of how long each task would take, it would not have been useful to plan things by the hour.
+
+![Trello board](./src/images/readme/screenshot_trello.png)
+> Figure 2 - Trello board
+
 ### Wireframing and Prototyping
-Once our team had a firm idea of what our site was about and the sort of features we wanted to include, we set about wireframing the pages using proto.io. This was the first time I had come across prototyping software and I found it incredibly useful to help visualise how someone would navigate around final website. As we had all agreed in the design and layout of the site at an early stage, it was also useful later on down the line during the styling phase.
+Once our team had a firm idea of our plan, what our site was about and the sort of features we wanted to include, we set about wireframing the pages using [Proto.io](https://proto.io/). This was the first time I had come across prototyping software and I found it incredibly useful to help visualise how someone would navigate around final website. As we had all agreed in the design and layout of the site at an early stage, it was also useful later on down the line during the styling phase.
 
 ![Wireframe flow](./src/images/readme/combined_wireframes.png)
-> Figure 2 - Wireframes and prototypes created using proto.io
+> Figure 3 - Wireframes and prototypes created using proto.io
 
 ## FINAL APP
 ### Screenshots
 Below are screenshots showing the final layout of our website. We decided to try to emulate the simple clean layout that you can find on the Spotify desktop app.
 
 ![register](./src/images/readme/screenshot_register.png)
-> Figure 3 - Register page
+> Figure 4 - Register page
 
 ![event index](./src/images/readme/screenshot_eventIndex.png)
-> Figure 4 - Events index page
+> Figure 5 - Events index page
 
 ![event show](./src/images/readme/screenshot_eventShow.png)
-> Figure 5 - Event show page
+> Figure 6 - Event show page
 
 ![group show](./src/images/readme/screenshot_groupShow.png)
-> Figure 6 - Group show page=
+> Figure 7 - Group show page=
 
 ### OAuth
 On the initial login page, a user can choose to register their details and set up a login. However to get the Spotify functionality working on Event pages, a user can login with their Spotify account details.
@@ -62,7 +68,7 @@ On the initial login page, a user can choose to register their details and set u
 The modal below appears once the users opts to login using their Spotify login:
 
 ![oauth](./src/images/readme/screenshot_spotifyOauth.png)
-> Figure 7 - Spotify login modal
+> Figure 8 - Spotify login modal
 
 The OAuth functionality is handled within a controller in the back end. Here, request-promise is used to send `POST` request to Spotify. Parameters such as the unique Spotify secret ID are included in the headers. Once the ID is authorised by Spotify,`request-promise` then handles a `GET` request which includes the encoded `access_token` from Spotify. This is stored in Local Storage within the browser and the tool that lets the website know that the user is authorised.
 
@@ -104,9 +110,9 @@ function spotifyLogin(req, res, next) {
 ```
 
 ### Proxy Request
-In order to get event data back from the ticketmaster API, we needed once again use `request-promise` to retrieve and handle operations in the back end.
+In order to get event data back from the Ticketmaster API, we needed once again use `request-promise` to retrieve and handle operations in the back end.
 
-Once we had registered our application on the ticketmaster developer [site](https://developer.ticketmaster.com/), we looked through the available documentation to 
+Once we had registered our application on the ticketmaster developer [site](https://developer.ticketmaster.com/), we looked through the available documentation to work out how and what data we would need. According to the documentation, a series of query string just need to be added to the root URL to help define the data being requested. 
 
 ```js
 function getEventData(req, res) {
@@ -116,22 +122,27 @@ function getEventData(req, res) {
 
 }
 ```
+The URL above had query strings which requested the following information from Ticketmaster:
 
-
+* classificationName (X2) - Pop music & pop concerts
+* city - London
+* sort - Sort results by date in ascending order
 
 ### Ticketmaster API Data
-JSON data back from Ticket Master
+An example of the JSON data received back from Ticketmaster is below. The information given is quite substantial which made it much easier to pad out our site with text and images. One particularly useful bit on information provided was the `latitude` and `longitude` figures from each event location. We later fed these numbers into the Google Maps API so that we could render a map around the specific location.
 
 ![ticketmaster api data](./src/images/readme/latlng.png)
-> Figure x - 
-
-
-
-
+> Figure 9 - Ticketmaster API JSON data
 
 ## MY RESPONSIBILITIES
+As this was a group project, 
+
 ### Google Maps
+One of my tasks was to set up the 
+
 pointer and lat / lng values
+
+Custom directive
 
 ```js
 function googleMap($window, $timeout) {
@@ -158,7 +169,7 @@ function googleMap($window, $timeout) {
 create and delete
 
 ![comments](./src/images/readme/Comments.png)
-> Figure x - 
+> Figure 10 - Comments box example
 
 
 
@@ -170,7 +181,7 @@ To run the back end testing, I used Mocha and Chai
 back end testing with Mocha and Chai
 
 ![testing](./src/images/readme/screenshot_test.png)
-
+> Figure 10 - Test output in Terminal
 
 ## STYLING
 ### Card Animations
