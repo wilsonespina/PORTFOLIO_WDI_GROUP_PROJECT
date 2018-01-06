@@ -92,6 +92,28 @@ The modal belew appears once the
 ![oauth](./src/images/readme/screenshot_spotifyOauth.png)
 > Figure x - 
 
+### Proxy Request
+
+```js
+function getEventData(req, res) {
+  rp('https://app.ticketmaster.com/discovery/v2/events.json?countryCode=GB
+&classificationName=pop&classificationName=concertp&city=London&sort=date,asc
+&apikey=bbr8L0veZB9V45s6JSAf321OGwHhydvq')
+    .then(response => {
+      const data = JSON.parse(response);
+      return res.status(200).json(data._embedded.events);
+    });
+}
+```
+
+
+
+### Ticketmaster API 
+JSON data back from Ticket Master
+
+![ticketmaster api data](./src/images/readme/latlng.png)
+> Figure x - 
+> 
 
 
 
@@ -100,6 +122,27 @@ The modal belew appears once the
 ## MY RESPONSIBILITIES
 ### Google Maps
 pointer and lat / lng values
+
+```js
+function googleMap($window, $timeout) {
+  return {
+  
+	...
+	
+    },
+    link(scope, element) {
+      $timeout(renderMap, 1000);
+      function renderMap() {
+        const latLng = {
+          lat: parseFloat(scope.center.lat),
+          lng: parseFloat(scope.center.lng)
+        };
+
+        map = new $window.google.maps.Map(element[0], {
+          zoom: 16,
+          center: latLng
+        });
+```
 
 ### Comments Section
 create and delete
@@ -137,6 +180,14 @@ changing on hover
 
 ### Mininal Colour Theme
 stick to few colours and maintain through out
+
+```js
+// Colors
+$spotify-green: #1db954;
+$black: black;
+$almost-black: #1C1C1C;
+$white: white;
+```
 
 
 ## LESSONS LEARNED
