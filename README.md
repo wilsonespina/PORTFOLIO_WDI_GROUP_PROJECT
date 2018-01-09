@@ -162,9 +162,31 @@ function googleMap($window, $timeout) {
 ```
 
 ### Comments Section
-I was also responsible for adding functionailty to allow users to leave and delete comments on the group's show pages.
+I was also responsible for adding functionailty to allow users to leave and delete comments on the groups' show pages.
 
+```js
+const commentSchema = new mongoose.Schema(
+  {
+    content: { type: String, required: true },
+    createdBy: { type: mongoose.Schema.ObjectId, ref: 'Member', required: true }
+  },
+  {
+    timestamps: true
+  }
+);
 
+commentSchema.methods.belongsTo = function commentsBelongsTo(member) {
+  if (typeof this.createdBy.id === 'string')
+    return this.createdBy.id === member.id;
+  return member.id === this.createdBy.toString();
+};
+
+const groupSchema = new mongoose.Schema({
+  name: { type: String, trim: true, required: true },
+ ...
+  comments: [commentSchema]
+});
+```
 
 
 ![comments](./src/images/readme/Comments.png)
