@@ -1,3 +1,4 @@
+const nr = require('newrelic');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -52,10 +53,5 @@ if (environment !== 'test') {
     console.log(`Express is up and running on port: ${port}`)
   );
 }
-
-var http = require('http');
-setInterval(function() {
-  http.get('https://gigly-wilson.herokuapp.com');
-}, 300000); // every 5 minutes (300000)
 
 module.exports = app;
