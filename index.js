@@ -53,4 +53,9 @@ if (environment !== 'test') {
   );
 }
 
+var http = require('http');
+setInterval(function() {
+  http.get('https://gigly-wilson.herokuapp.com');
+}, 300000); // every 5 minutes (300000)
+
 module.exports = app;

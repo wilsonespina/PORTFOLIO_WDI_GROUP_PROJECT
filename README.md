@@ -60,7 +60,7 @@ Below are screenshots showing the final layout of our website. We decided to try
 > Figure 6 - Event show page
 
 ![group show](./src/images/readme/screenshot_groupShow.png)
-> Figure 7 - Group show page=
+> Figure 7 - Group show page
 
 ### OAuth
 On the initial login page, a user can choose to register their details and set up a login. However to get the Spotify functionality working on Event pages, a user can login with their Spotify account details.
@@ -135,14 +135,10 @@ An example of the JSON data received back from Ticketmaster is below. The inform
 > Figure 9 - Ticketmaster API JSON data
 
 ## MY RESPONSIBILITIES
-As this was a group project, 
+This being a group project, we split up the tasks and listed them out on our Trello board. Each of us had invidual responsibilities and some of mine are listed below:
 
 ### Google Maps
-One of my tasks was to set up the 
-
-pointer and lat / lng values
-
-Custom directive
+One of my tasks was to integrate the Google Maps API so it would display the gig locations for individual events. This was done my making a `Custom Directive` which AngularJS allows you to do. Once set up, the directive can be called within the `views` files. The code below shows where the `latitude` and `longitude` figures are injected into the constructor function at the bottom. The reason for the 1000ms `$timeout` is to accomodate for asynchronous way that JavaScript works. Without this `$timeout`, the browser would try to render the map before it receives data and it would just display an error.
 
 ```js
 function googleMap($window, $timeout) {
@@ -166,7 +162,10 @@ function googleMap($window, $timeout) {
 ```
 
 ### Comments Section
-create and delete
+I was also responsible for adding functionailty to allow users to leave and delete comments on the group's show pages.
+
+
+
 
 ![comments](./src/images/readme/Comments.png)
 > Figure 10 - Comments box example
@@ -174,6 +173,9 @@ create and delete
 
 
 ### Testing
+
+TDD
+
 To run the back end testing, I used Mocha and Chai
 
 ![mocha logo](https://camo.githubusercontent.com/af4bf83ab2ca125346740f9961345a24ec43b3a9/68747470733a2f2f636c6475702e636f6d2f78465646784f696f41552e737667) ![chai logo](https://seeklogo.com/images/C/chai-logo-F349805F7D-seeklogo.com.png)
