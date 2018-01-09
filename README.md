@@ -223,7 +223,7 @@ $white: white;
 
 ### Project Successes
 1. Managing to incorporate three different APIs and having them work together.
-2. 
+2. Creating and running tests for the first time.
 
 ## FEATURES BACKLOG
 1. Adding Google Places to the site to help users find out if there's restaurants/bars near the gig location.
