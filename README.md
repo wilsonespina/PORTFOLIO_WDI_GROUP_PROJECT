@@ -207,16 +207,21 @@ As with any project, there were a few issues that the team came across that we h
 
 ### Difficulties
 1. **Working on the same code** - This was the first time any of our team had used GitHub to work on the same code at the same time. Becasue of this, it took a while to get used to the git flow where we would work on our own branches, push to the development branch and deal with merge conflicts. This was a great learning experience as it demonstrated the importance of communication and sharing exactly which parts of the code everyone's working on.
-2. **Spotify app issues** - One of the main features that made part of our Minimum Viable Product (MVP), was to allow users to listen to songs through Spotify. We found that 
-3. **Duplicate classes affecting CSS styling** - 
-4. **Not understanding what the true MVP was** -
+2. **Spotify app issues** - One of the main features that made part of our Minimum Viable Product (MVP), was to allow users to listen to songs through Spotify. Before we started coding, we were unaware that Spotify had recently updated the way OAuth works with their app. Unfortunately for us, they made it more difficult than they had previously and their documentation wasn't as detailed as it could be. This led to many more extra hours spent on this than we had planned, but ws a valuable experience in project planning and aloowing for these sorts of delays
+3. **Duplicate classes affecting CSS styling** - When it came to the CSS styling phase, we all worked on separate pages and hadn't decided on a naming convention beforehand. This led to some duplicate class names and meant that we had top rework the code when merging everything. This added a delay in submitting our final product and meant it was really down to the wire for our final submission!
+4. **Not understanding what the true MVP was** - At the start of the project, the original idea for the site was that users could use Spotify to recommend songs to each other before gigs/festivals. However when as the app developed, we pivotted on this idea and instead made the site load in a few songs from the relevant artist. There were a few other ideas we pivotted on along the way making it difficult to understand what we needed to acheive at a basic level. If we were to build the app again, I would definitely have recommended that we all agree as a team what the MVP would be at an early stage so we all know what we needed to produce and when.
+5. **Deploying on Heroku** - When we reached the deployment phase, we found several issues when deploying to Heroku. This meant a fair amount of time having to correct bits of code that were flagged up in the CLI.
+
+We also had several successes along the way and managed to provide a working app at the end of our project deadline.
 
 ### Project Successes
-1. Managing to incorporate three different APIs and having them work together.
-2. Creating and running tests for the first time.
+1. **Managing to incorporate three different APIs and having them work together** - We had 3 API's in total all working in conjunction with one another.
+2. **Creating and running tests for the first time** - This was a great way to learn how to write tests and run them successfully on my own app.
+3. **Maintaining a simple style throughout the site** - The final 
+4. **Getting the Spotify API to work (in the end)** - Although we had problems with setting up Spotify, we eventually got it working.
 
 ## FEATURES BACKLOG
-1. Adding Google Places to the site to help users find out if there's restaurants/bars near the gig location.
+1. Adding Google Places to help users find out if there's restaurants/bars near the gig location.
 2. Running more tests and correcting the 14 pending test that I had already written.
 3. Add a customised favicon to the site.
-4. Add an option for users to 
+4. Add an option for users to choose different event types, not just pop gigs in London.
