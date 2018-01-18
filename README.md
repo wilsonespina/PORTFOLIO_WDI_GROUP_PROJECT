@@ -135,7 +135,7 @@ An example of the JSON data received back from Ticketmaster is below. The inform
 > Figure 9 - Ticketmaster API JSON data
 
 ## MY RESPONSIBILITIES
-This being a group project, we split up the tasks and listed them out on our Trello board. Each of us had invidual responsibilities and some of mine are listed below:
+As this was a group project, we split up the tasks and listed them out on our Trello board. Each of us had invidual responsibilities and some of mine are listed below:
 
 ### Google Maps
 One of my tasks was to integrate the Google Maps API so it would display the gig locations for individual events. This was done my making a `Custom Directive` which AngularJS allows you to do. Once set up, the directive can be called within the `views` files. The code below shows where the `latitude` and `longitude` figures are injected into the constructor function at the bottom. The reason for the 1000ms `$timeout` is to accomodate for asynchronous way that JavaScript works. Without this `$timeout`, the browser would try to render the map before it receives data and it would just display an error.
@@ -162,7 +162,7 @@ function googleMap($window, $timeout) {
 ```
 
 ### Comments Section
-I was also responsible for adding functionailty to allow users to leave and delete comments on the groups' show pages.
+I was also responsible for adding comments functionality to allow users to post and delete comments on the groups' show pages. Each comment needed to be associated to indivual `members` so these were included in comment and group schema (shown below). Every time a new comment was created, it had an associated `createdBy` object which referred to an embedded `Member`.
 
 ```js
 const commentSchema = new mongoose.Schema(
@@ -175,11 +175,7 @@ const commentSchema = new mongoose.Schema(
   }
 );
 
-commentSchema.methods.belongsTo = function commentsBelongsTo(member) {
-  if (typeof this.createdBy.id === 'string')
-    return this.createdBy.id === member.id;
-  return member.id === this.createdBy.toString();
-};
+...
 
 const groupSchema = new mongoose.Schema({
   name: { type: String, trim: true, required: true },
@@ -188,60 +184,32 @@ const groupSchema = new mongoose.Schema({
 });
 ```
 
+As the comments section would be rendered on the righthand side of the page, I decided to stick to just using pure CSS to style the elements rather than using Bulma's layout. Each 'speech bubble' is just a `div` that wraps round the text in the comments and the `POST` button comes from the Bulma in-built style. I wanted to overall look to be quite simple and reflect the type of interface you would see on WhatsApp messenger.
 
 ![comments](./src/images/readme/Comments.png)
 > Figure 10 - Comments box example
 
-
-
 ### Testing
 
-TDD
-
-To run the back end testing, I used Mocha and Chai
+To run the back end testing, I used Mocha for the testing framework and Chai for the assertion library. This project was the first time I used *Test Driven Development* outside of the classroom. It was a new experience and an insight into using common industry techniques.
 
 ![mocha logo](https://camo.githubusercontent.com/af4bf83ab2ca125346740f9961345a24ec43b3a9/68747470733a2f2f636c6475702e636f6d2f78465646784f696f41552e737667) ![chai logo](https://seeklogo.com/images/C/chai-logo-F349805F7D-seeklogo.com.png)
 
-back end testing with Mocha and Chai
+As we only had a limited time on the project, I wrote 12  successful tests and had a further 14 pending that I'll alter in the future.
 
 ![testing](./src/images/readme/screenshot_test.png)
 > Figure 10 - Test output in Terminal
 
-## STYLING
-### Card Animations
-changing on hover
-
-```css
-._card {
-  background-color: $almost-black;
-  border-left: 4px solid $spotify-green;
-  color: $white;
-  &:hover {
-    background-color: darken( $almost-black, 2% );
-    border-left: 4px solid #DA22FF;
-    cursor: pointer;
-    }
-```
-
-### Minimal Colour Theme
-stick to few colours and maintain through out
-
-```js
-// Colors
-$spotify-green: #1db954;
-$black: black;
-$almost-black: #1C1C1C;
-$white: white;
-```
-
 
 ## LESSONS LEARNED
 
+As with any project, there were a few issues that the team came across that we had to resolve along the way.
+
 ### Difficulties
-1. git flow
-2. Spotify app issues
-3. styling classes duplication
-4. Not understanding what the true MVP was 
+1. **Working on the same code** - This was the first time any of our team had used GitHub to work on the same code at the same time. Becasue of this, it took a while to get used to the git flow where we would work on our own branches, push to the development branch and deal with merge conflicts. This was a great learning experience as it demonstrated the importance of communication and sharing exactly which parts of the code everyone's working on.
+2. **Spotify app issues** - One of the main features that made part of our Minimum Viable Product (MVP), was to allow users to listen to songs through Spotify. We found that 
+3. **Duplicate classes affecting CSS styling** - 
+4. **Not understanding what the true MVP was** -
 
 ### Project Successes
 1. Managing to incorporate three different APIs and having them work together.
@@ -249,4 +217,6 @@ $white: white;
 
 ## FEATURES BACKLOG
 1. Adding Google Places to the site to help users find out if there's restaurants/bars near the gig location.
-2. Running more tests
+2. Running more tests and correcting the 14 pending test that I had already written.
+3. Add a customised favicon to the site.
+4. Add an option for users to 
