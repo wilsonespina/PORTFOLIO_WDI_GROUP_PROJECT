@@ -217,7 +217,7 @@ We also had several successes along the way and managed to provide a working app
 ### Project Successes
 1. **Managing to incorporate three different APIs and having them work together** - We had 3 API's in total all working in conjunction with one another.
 2. **Creating and running tests for the first time** - This was a great way to learn how to write tests and run them successfully on my own app.
-3. **Maintaining a simple style throughout the site** - The final 
+3. **Maintaining a simple style throughout the site** - The final look and feel of the site is, in my opinion, quite professional.
 4. **Getting the Spotify API to work (in the end)** - Although we had problems with setting up Spotify, we eventually got it working.
 
 ## FEATURES BACKLOG
