@@ -1,6 +1,8 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) WDI Project 3: Group Project - 'Gig.ly'
 
-Adding additional features to WDI_GROUP_PROJECT - Original project **[https://gigly-wilson.herokuapp.com/](https://gigly-wilson.herokuapp.com/)**
+Adding additional features to WDI_GROUP_PROJECT
+Original project - **[https://gigly-wilson.herokuapp.com/](https://gigly-wilson.herokuapp.com/)**
+Updated project - **[https://portfolio-group-project.herokuapp.com/](https://portfolio-group-project.herokuapp.com/)**
 
 ![Landing Page](./src/images/readme/screenshot_landingpage.png)
 
