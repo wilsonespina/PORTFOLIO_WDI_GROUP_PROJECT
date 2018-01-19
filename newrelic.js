@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['WDI_GROUP_PROJECT'],
+  app_name: ['PORTFOLIO_WDI_GROUP_PROJECT'],
   /**
    * Your New Relic license key.
    */
